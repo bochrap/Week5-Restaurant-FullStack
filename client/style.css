@@ -92,3 +92,39 @@ h2 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+<<<<<<< Updated upstream
+=======
+
+#menu-div {
+  width: 80vw;
+  height: 300px;
+  background-color: rgba(255, 228, 196, 0.745);
+}
+
+.itemDiv {
+  display: flex;
+}
+
+.nameDescriptionDiv {
+  display: flex;
+}
+
+.itemImg {
+  flex-direction: column;
+  height: 100px;
+  width: 100px;
+}
+
+.itemName {
+}
+
+.itemDescription {
+}
+
+.itemPrice {
+}
+.contact{
+  left: 500px;
+  top: 336px;
+}
+>>>>>>> Stashed changes
