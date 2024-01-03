@@ -40,6 +40,11 @@ a {
   background-image: url(./index-background.jpg);
 }
 
+.industry {
+  z-index: -1;
+  background-image: url(./image.jpg);
+}
+
 .feature {
   position: relative;
   background-size: cover;
@@ -97,16 +102,21 @@ h2 {
 }
 
 #menu-div {
+  margin-top: 300px;
   width: 80vw;
-  height: 300px;
-  background-color: rgba(255, 228, 196, 0.745);
+  height: 100%;
+  
 }
 
 .itemDiv {
+  margin-top: 1px;
   display: flex;
   flex-direction: column;
   border: 5px solid black;
   padding: 1px;
+  background-color: antiquewhite;
+  opacity: 75%
+  
    
 }
 
@@ -117,13 +127,10 @@ h2 {
 .itemImg {
   flex-direction: column;
 
-  height: 170px;
+  height: 125px;
   
-  width: 170px;
+  width: 125px;
   position: absolute;
-  
-  
-  
   
 }
 
@@ -136,9 +143,12 @@ h2 {
 }
 
 .itemDescription {
+  margin-left: 2px;
+  margin-right: 50px;
 }
 
 .itemPrice {
-  margin: 200px;
-  margin-top: 0px;
+  margin-left: 200px;
 }
+
+
