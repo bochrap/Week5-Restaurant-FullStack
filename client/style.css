@@ -104,6 +104,10 @@ h2 {
 
 .itemDiv {
   display: flex;
+  flex-direction: column;
+  border: 5px solid black;
+  padding: 1px;
+   
 }
 
 .nameDescriptionDiv {
@@ -112,15 +116,29 @@ h2 {
 
 .itemImg {
   flex-direction: column;
-  height: 100px;
-  width: 100px;
+
+  height: 170px;
+  
+  width: 170px;
+  position: absolute;
+  
+  
+  
+  
 }
 
 .itemName {
+  margin: 200px;
+  display: flex;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  
 }
 
 .itemDescription {
 }
 
 .itemPrice {
+  margin: 200px;
+  margin-top: 0px;
 }
