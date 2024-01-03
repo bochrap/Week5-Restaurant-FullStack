@@ -14,3 +14,8 @@ app.listen(8080, function () {
 app.get("/", function (req, res) {
   res.json("You are in the root of the server");
 });
+
+app.get("/menu", function (req, res) {
+  const menuItems = db.prepare(`SELECT * FROM menu`).all();
+  res.json(menuItems);
+});
