@@ -20,6 +20,13 @@ async function getMenu() {
     itemPrice.textContent = item.price;
     itemImg.src = item.image;
 
+    itemDiv.classList.add("itemDiv");
+    itemImg.classList.add("itemImg");
+    itemName.classList.add("itemName");
+    itemDescription.classList.add("itemDescription");
+    itemPrice.classList.add("itemPrice");
+    nameDescriptionDiv.classList.add("nameDescriptionDiv");
+
     nameDescriptionDiv.appendChild(itemName);
     nameDescriptionDiv.appendChild(itemDescription);
 
