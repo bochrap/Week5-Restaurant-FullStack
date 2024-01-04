@@ -9,7 +9,9 @@
 </head>
 <body>
     <header> 
+        
         <img src ="./logoA.jpg" width="150" height="150">
+
         <nav>
             <a href = "./index.html">HOME</a>
             <a href = "./menu.html">MENU</a>
@@ -18,42 +20,49 @@
         </nav>
     </header>
     
-    <main>
-        <h1>Shopping Cart</h1>
+    <main id="content">
+        <section class ="feature newalbum">
 
   <div id="products">
+    <h1>Shopping Cart</h1>
     <div class="product">
-      <span>Fish and Chips - 12.99</span>
-      <input type="number" min="0" value="0" class="quantity" id="quantity1">
+    <span>Fish and Chips - 12.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="fishQuantity">
   </div>
 
   <div class="product">
-      <span>Shepherds Pie - 10.99</span>
-      <input type="number" min="0" value="0" class="quantity" id="quantity2">
+    <span>Shepherds Pie - 10.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="pieQuantity">
   </div>
+
   <div class="product">
-        <span>Bangers and Mash - 9.99</span>
-        <input type="number" min="0" value="0" class="quantity" id="quantity2">
+    <span>Bangers and Mash - 9.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="bangersQuantity">
   </div>
-      <div class="product">
-        <span>Ploughmans Platter - 8.99</span>
-        <input type="number" min="0" value="0" class="quantity" id="quantity2">
+
+  <div class="product">
+    <span>Ploughmans Platter - 8.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="platterQuantity">
   </div>
+
   <div class="product">
     <span>Yorkshire Pudding - 5.99</span>
-    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+    <input type="number" min="0" value="0" class="quantity" id="puddingQuantity">
   </div>
+
   <div class="product">
     <span>English Breakfast Tea - 2.99</span>
-    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+    <input type="number" min="0" value="0" class="quantity" id="teaQuantity">
   </div>
+
   <div class="product">
     <span>Pimms Cup - 7.99</span>
-    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+    <input type="number" min="0" value="0" class="quantity" id="pimmsQuantity">
   </div>
+
   <div class="product">
     <span>Lemonade - 3.99</span>
-    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+    <input type="number" min="0" value="0" class="quantity" id="lemonadeQuantity">
   </div>
     
   </div>
@@ -61,8 +70,22 @@
   <p>Total: $<span id="total">0</span></p>
   <button onclick="placeOrder()">Place Order</button>
 
+            <!-- I named classes below exactly the same like in example of SPACEY. -->
+            <div class ="post-meta"> 
+                <h2 class="post-meta_tagline">New Album!</h2>
+                <h1 class="post-meta_heading">BLOOD AND DUST</h1>
+                <a class="post-meta_more" href="#">Read more!</a>
+            </div>
+        </section>
+        <section id="industry" class="feature industry">
+            <div class = "post-meta">
+                <h2 class="post-meta_tagline">New video from</h2>
+                <h1 class="post-meta_heading">INDUSTRY EP</h1>
+                <a class="post-meta_more" href="https://www.youtube.com/watch?v=CsFb4vUew1s">Watch on  YouTube</a>
+            </div>
+        </section>
     </main>
-    <footer> Copyright: Artur Ciecierski</footer>
+    <footer></footer>
     </body>
     </html>
 </html>
