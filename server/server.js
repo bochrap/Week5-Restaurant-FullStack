@@ -25,6 +25,16 @@ app.get("/order", function (req, res) {
   res.json(menuItems);
 });
 
+// app.post("/order", function (req, res) {
+//   const name = req.body.name;
+//   const price = req.body.price;
+
+//   const newEntry = db
+//     .prepare(`INSERT INTO foodorder (name, price) VALUES (?, ?)`)
+//     .run(name, price);
+//   res.json(newEntry);
+// });
+
 app.post("/order", function (req, res) {
   const name = req.body.name;
   const price = req.body.price;
@@ -32,5 +42,11 @@ app.post("/order", function (req, res) {
   const newEntry = db
     .prepare(`INSERT INTO foodorder (name, price) VALUES (?, ?)`)
     .run(name, price);
-  res.json(newEntry);
+
+  // Fetch the inserted item from the database
+  const insertedItem = db
+    .prepare(`SELECT * FROM foodorder WHERE id = ?`)
+    .get(newEntry.lastInsertRowid);
+
+  res.json(insertedItem);
 });

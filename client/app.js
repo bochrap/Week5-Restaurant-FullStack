@@ -47,14 +47,29 @@ if (menuDiv) {
   getMenu();
 }
 
-function orderBtnListener() {
-  const btns = document.querySelectorAll(".orderBtn");
-  btns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      console.log("YO");
-    });
-  });
-}
+// function orderBtnListener() {
+//   const btns = document.querySelectorAll(".orderBtn");
+//   btns.forEach((btn) => {
+//     btn.addEventListener("click", function () {
+//       const itemName = this.parentNode.querySelector(".itemName").textContent;
+//       const itemPrice = this.parentNode.querySelector(".itemPrice").textContent;
+
+//       fetch("http://localhost:8080/order", {
+//         method: "POST",
+//         headers: {
+//           "Content-type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           name: itemName,
+//           price: parseFloat(itemPrice),
+//         }),
+//       })
+//         .then((response) => response.json())
+//         .then((data) => console.log(data))
+//         .catch((error) => console.error("Error:", error));
+//     });
+//   });
+// }
 // const productPrices = {
 //   fishQuantity: 12.99,
 //   pieQuantity: 10.99,
@@ -131,3 +146,34 @@ function orderBtnListener() {
 
 // // Initial updt of the basket
 // updateCart();
+
+function orderBtnListener() {
+  const btns = document.querySelectorAll(".orderBtn");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const itemNameElement = this.parentNode.querySelector(".itemName");
+      const itemName = itemNameElement ? itemNameElement.textContent : ""; // Ensure itemName is not undefined
+
+      // if (!itemName.trim()) {
+      //   console.error("Item name is empty or undefined");
+      //   return;
+      // }
+
+      const itemPrice = this.parentNode.querySelector(".itemPrice").textContent;
+
+      fetch("http://localhost:8080/order", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name: itemName,
+          price: parseFloat(itemPrice),
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
+    });
+  });
+}
