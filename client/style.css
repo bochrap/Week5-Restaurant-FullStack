@@ -39,6 +39,15 @@ a {
 .newalbum {
   background-image: url(./index-background.jpg);
 }
+.contactbg {
+  background-image: url(contact-background.jpg);
+}
+
+.industry {
+  z-index: -1;
+  background-image: url(./image.jpg);
+  background-image: url(./index-background.jpg);
+}
 
 .industry {
   z-index: -1;
@@ -124,9 +133,9 @@ h2 {
 .itemImg {
   flex-direction: column;
 
-  height: 125px;
+  height: 105px;
 
-  width: 125px;
+  width: 120px;
   position: absolute;
 }
 
@@ -144,4 +153,17 @@ h2 {
 
 .itemPrice {
   margin-left: 200px;
+}
+.contact {
+  left: 700px;
+  top: 227px;
+}
+.contact1 {
+  top: 227px;
+  left: 200px;
+}
+
+#products {
+  height: 300px;
+  width: 300px;
 }
