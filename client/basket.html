@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="/client/app.js" defer type="module"></script>
 </head>
 <body>
     <header> 
-        <img src ="./logo.jpeg" width="300" height="150">
+        <img src ="./logoA.jpg" width="150" height="150">
         <nav>
             <a href = "./index.html">HOME</a>
             <a href = "./menu.html">MENU</a>
@@ -17,15 +18,49 @@
         </nav>
     </header>
     
-    <main id="content">
-        <section class ="feature newalbum">
-            <!-- I named classes below exactly the same like in example of SPACEY. -->
-            <div class ="post-meta"> 
-                <h2 class="post-meta_tagline">New Album!</h2>
-                <h1 class="post-meta_heading">BLOOD AND DUST</h1>
-                <a class="post-meta_more" href="#">Read more!</a>
-            </div>
-        </section>
+    <main>
+        <h1>Shopping Cart</h1>
+
+  <div id="products">
+    <div class="product">
+      <span>Fish and Chips - 12.99</span>
+      <input type="number" min="0" value="0" class="quantity" id="quantity1">
+  </div>
+
+  <div class="product">
+      <span>Shepherds Pie - 10.99</span>
+      <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+  <div class="product">
+        <span>Bangers and Mash - 9.99</span>
+        <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+      <div class="product">
+        <span>Ploughmans Platter - 8.99</span>
+        <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+  <div class="product">
+    <span>Yorkshire Pudding - 5.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+  <div class="product">
+    <span>English Breakfast Tea - 2.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+  <div class="product">
+    <span>Pimms Cup - 7.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+  <div class="product">
+    <span>Lemonade - 3.99</span>
+    <input type="number" min="0" value="0" class="quantity" id="quantity2">
+  </div>
+    
+  </div>
+
+  <p>Total: $<span id="total">0</span></p>
+  <button onclick="placeOrder()">Place Order</button>
+
     </main>
     <footer> Copyright: Artur Ciecierski</footer>
     </body>

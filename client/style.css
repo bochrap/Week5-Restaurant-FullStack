@@ -46,6 +46,12 @@ a {
 .industry {
   z-index: -1;
   background-image: url(./image.jpg);
+  background-image: url(./index-background.jpg);
+}
+
+.industry {
+  z-index: -1;
+  background-image: url(./image.jpg);
 }
 
 .feature {
