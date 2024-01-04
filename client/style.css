@@ -127,9 +127,9 @@ h2 {
 .itemImg {
   flex-direction: column;
 
-  height: 125px;
+  height: 105px;
   
-  width: 125px;
+  width: 120px;
   position: absolute;
   
 }
