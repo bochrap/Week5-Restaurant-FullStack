@@ -1,4 +1,32 @@
 const menuDiv = document.getElementById("menu-div");
+const basketDiv = document.getElementById("basket-div");
+
+async function getBasket() {
+  const response = await fetch("http://localhost:8080/order");
+  const items = await response.json();
+  console.log(items);
+
+  items.forEach(function (item) {
+    const basketItem = document.createElement("div");
+    basketDiv.appendChild(basketItem);
+
+    const basketName = document.createElement("span");
+    const basketPrice = document.createElement("span");
+
+    basketName.textContent = item.name;
+    basketPrice.textContent = item.price;
+
+    basketItem.classList.add("basketItem");
+    basketName.classList.add("basketName");
+    basketPrice.classList.add("basketPrice");
+
+    basketItem.appendChild(basketName);
+    basketItem.appendChild(basketPrice);
+  });
+}
+if (basketDiv) {
+  getBasket();
+}
 
 async function getMenu() {
   const response = await fetch("http://localhost:8080/menu");

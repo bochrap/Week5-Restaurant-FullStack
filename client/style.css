@@ -167,3 +167,31 @@ h2 {
   height: 300px;
   width: 300px;
 }
+/* 
+   basketDiv.classList.add("basketDiv");
+    basketName.classList.add("basketName");
+    basketPrice.classList.add("basketPrice");
+     <div id="basket-div"> */
+
+#basket-div {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 228, 196, 0.782);
+  gap: 1rem;
+  padding: 10px;
+  align-items: center;
+}
+
+.basketItem {
+  border-bottom: 2px solid black;
+  align-items: center;
+}
+
+.basketName {
+}
+
+.basketPrice {
+  padding-left: 1rem;
+}
