@@ -39,6 +39,15 @@ a {
 .newalbum {
   background-image: url(./index-background.jpg);
 }
+.contactbg {
+  background-image: url(contact-background.jpg);
+}
+
+.industry {
+  z-index: -1;
+  background-image: url(./image.jpg);
+  background-image: url(./index-background.jpg);
+}
 
 .industry {
   z-index: -1;
@@ -150,5 +159,14 @@ h2 {
 .itemPrice {
   margin-left: 200px;
 }
+.contact{
+  left: 700px;
+  top:227px;
+}
+.contact1{
+  top: 227px;
+  left: 200px;
+}
+
 
 
