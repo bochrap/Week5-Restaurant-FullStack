@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import cors from "cors";
 import Database from "better-sqlite3";
 const db = new Database("database.db");
@@ -18,4 +18,19 @@ app.get("/", function (req, res) {
 app.get("/menu", function (req, res) {
   const menuItems = db.prepare(`SELECT * FROM menu`).all();
   res.json(menuItems);
+});
+
+app.get("/order", function (req, res) {
+  const menuItems = db.prepare(`SELECT * FROM foodorder`).all();
+  res.json(menuItems);
+});
+
+app.post("/order", function (req, res) {
+  const name = req.body.name;
+  const price = req.body.price;
+
+  const newEntry = db
+    .prepare(`INSERT INTO foodorder (name, price) VALUES (?, ?)`)
+    .run(name, price);
+  res.json(newEntry);
 });

@@ -25,3 +25,13 @@ db.exec(`
     ('Pimms Cup', 'Refreshing cocktail with Pimms No. 1, fruit, and soda', '7.99', 'drinks','/client/menu-imgs/pimmscup.jpg'),
     ('Lemonade', 'Homemade lemonade with fresh lemons and sugar', '3.99', 'drinks','/client/menu-imgs/lemonade.jpg')
 `);
+
+const createOrderTable = db.prepare(`
+  CREATE TABLE IF NOT EXISTS foodorder (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    price REAL NOT NULL
+  )
+`);
+
+createOrderTable.run();

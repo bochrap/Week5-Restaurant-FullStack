@@ -14,11 +14,13 @@ async function getMenu() {
     const itemName = document.createElement("h3");
     const itemDescription = document.createElement("p");
     const itemPrice = document.createElement("p");
+    const orderBtn = document.createElement("button");
 
     itemName.textContent = item.name;
     itemDescription.textContent = item.description;
     itemPrice.textContent = item.price;
     itemImg.src = item.image;
+    orderBtn.textContent = "ADD TO ORDER";
 
     itemDiv.classList.add("itemDiv");
     itemImg.classList.add("itemImg");
@@ -26,6 +28,7 @@ async function getMenu() {
     itemDescription.classList.add("itemDescription");
     itemPrice.classList.add("itemPrice");
     nameDescriptionDiv.classList.add("nameDescriptionDiv");
+    orderBtn.classList.add("orderBtn");
 
     nameDescriptionDiv.appendChild(itemName);
     nameDescriptionDiv.appendChild(itemDescription);
@@ -33,7 +36,18 @@ async function getMenu() {
     itemDiv.appendChild(nameDescriptionDiv);
     itemDiv.appendChild(itemImg);
     itemDiv.appendChild(itemPrice);
+    itemDiv.appendChild(orderBtn);
   });
+  orderBtnListener();
 }
 
 getMenu();
+
+function orderBtnListener() {
+  const btns = document.querySelectorAll(".orderBtn");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      console.log("YO");
+    });
+  });
+}
