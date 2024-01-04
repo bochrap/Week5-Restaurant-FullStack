@@ -11,17 +11,15 @@ body {
 
 header {
   position: fixed; /*making header always positioned over otheer content - header fixed */
-  display: flex; /* enabling positioning of a header with flex */
+  display: flex; 
   z-index: 1;
-  justify-content: left;
+  justify-content:  left;
   gap: 5rem;
-  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-
-  background-color: transparent;
-
-  color: white;
-
+  text-align: center;
+  background-color: white;
+  color: black;
+  opacity: 65%;
   width: 100%; /* Setting width of a header */
   padding: 0 0;
 }
@@ -31,12 +29,29 @@ nav {
   gap: 5rem; /* making gaps between elements */
   flex-direction: row; /*setting elements in direction suitable for page */
   align-items: center;
+  color: black;
+ 
 }
+
+
+p {
+  
+  text-indent: 20px;
+  font-size: 20px;
+}
+
 a {
-  color: white;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nameDescriptionDiv {
+  display: flex;
 }
 
 .newalbum {
+  z-index: -1;
   background-image: url(./index-background.jpg);
 }
 .contactbg {
@@ -50,12 +65,12 @@ a {
 }
 
 .industry {
-  z-index: -1;
+  z-index: 0;
   background-image: url(./image.jpg);
 }
 
 .feature {
-  position: relative;
+  
   background-size: cover;
   background-position: center;
   height: 120vh;
@@ -72,29 +87,54 @@ div {
 }
 
 .post-meta {
-  position: absolute;
-  bottom: 200px;
+  background-image: url(./logoA.jpg);
+  
+  font-weight: 900;
+  position: fixed;
+  bottom: 2px;
   left: 3rem;
-  color: white;
+  background-color: antiquewhite;
+  color: black;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  max-width: 1200px;
+  max-height: 600px;
+  text-align: justify;
+  margin-left: 100px;
+  line-height: 0.60;
+  margin-bottom: 120px;
+  margin-top: 80px;
+  border-width: 20px;
+  border-style: groove;
+  border-color: black;
+  opacity: 65%
 }
 div {
   display: block;
 }
 
 .post-meta_tagline {
+  
   text-transform: uppercase;
-  font-weight: 100;
-  opacity: 1;
+  font-weight: 500;
+  
   font-family: sans-serif;
   font-size: 1.5rem;
 }
 html,
 body,
-h1,
+
+
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
 h2 {
+  
+  text-align: center;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -125,13 +165,10 @@ h2 {
   padding: 1px;
   background-color: antiquewhite;
   opacity: 75%
-  
    
 }
 
-.nameDescriptionDiv {
-  display: flex;
-}
+
 
 .itemImg {
   flex-direction: column;
@@ -168,8 +205,23 @@ h2 {
   left: 200px;
 }
 
+#OffButton {
+  font-size: 30px;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+#OffButton:hover {
+  background-color: transparent;
+  color: black;
 
 #products {
   height: 300px;
   width: 300px;
+
 }
