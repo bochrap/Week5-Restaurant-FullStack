@@ -151,4 +151,7 @@ h2 {
   margin-left: 200px;
 }
 
-
+#products {
+  height: 300px;
+  width: 300px;
+}
