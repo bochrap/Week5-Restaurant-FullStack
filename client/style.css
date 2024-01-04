@@ -37,7 +37,15 @@ a {
 }
 
 .newalbum {
-  background-image: url(./main-image.jpg);
+  background-image: url(./index-background.jpg);
+}
+.contactbg {
+  background-image: url(contact-background.jpg);
+}
+
+.industry {
+  z-index: -1;
+  background-image: url(./image.jpg);
 }
 
 .feature {
@@ -45,6 +53,9 @@ a {
   background-size: cover;
   background-position: center;
   height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 section {
@@ -92,17 +103,24 @@ h2 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
-<<<<<<< Updated upstream
-=======
 
 #menu-div {
+  margin-top: 300px;
   width: 80vw;
-  height: 300px;
-  background-color: rgba(255, 228, 196, 0.745);
+  height: 100%;
+  
 }
 
 .itemDiv {
+  margin-top: 1px;
   display: flex;
+  flex-direction: column;
+  border: 5px solid black;
+  padding: 1px;
+  background-color: antiquewhite;
+  opacity: 75%
+  
+   
 }
 
 .nameDescriptionDiv {
@@ -111,20 +129,38 @@ h2 {
 
 .itemImg {
   flex-direction: column;
-  height: 100px;
-  width: 100px;
+
+  height: 105px;
+  
+  width: 120px;
+  position: absolute;
+  
 }
 
 .itemName {
+  margin: 200px;
+  display: flex;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  
 }
 
 .itemDescription {
+  margin-left: 2px;
+  margin-right: 50px;
 }
 
 .itemPrice {
+  margin-left: 200px;
 }
 .contact{
-  left: 500px;
-  top: 336px;
+  left: 700px;
+  top:227px;
 }
->>>>>>> Stashed changes
+.contact1{
+  top: 227px;
+  left: 200px;
+}
+
+
+
