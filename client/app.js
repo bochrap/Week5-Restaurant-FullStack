@@ -6,12 +6,26 @@ async function getBasket() {
   const items = await response.json();
   console.log(items);
 
+  let totalPrice = 0;
+
   items.forEach(function (item) {
     const basketItem = document.createElement("div");
     basketDiv.appendChild(basketItem);
 
     const basketName = document.createElement("span");
     const basketPrice = document.createElement("span");
+    const totalSpan = document.createElement("span");
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "❌";
+    deleteBtn.classList.add("deleteBtn");
+
+    deleteBtn.addEventListener("click", function () {
+      // Handle the delete button click
+      deleteBasketItem(item.id); // Assuming there is an 'id' property in your item
+    });
+
+    totalPrice += item.price;
 
     basketName.textContent = item.name;
     basketPrice.textContent = item.price;
@@ -22,8 +36,29 @@ async function getBasket() {
 
     basketItem.appendChild(basketName);
     basketItem.appendChild(basketPrice);
+    basketItem.appendChild(deleteBtn);
   });
+
+  const totalSpan = document.createElement("span");
+  totalSpan.textContent = "Total Price: " + totalPrice;
+
+  // Append totalSpan to the bottom of basketDiv
+  basketDiv.appendChild(totalSpan);
+
+  console.log("Total Price:", totalPrice);
 }
+
+async function deleteBasketItem(itemId) {
+  // Send a DELETE request to the server to delete the item
+  await fetch(`http://localhost:8080/order/${itemId}`, {
+    method: "DELETE",
+  });
+
+  // Clear the basketDiv and reload the basket
+  basketDiv.innerHTML = "";
+  getBasket();
+}
+
 if (basketDiv) {
   getBasket();
 }

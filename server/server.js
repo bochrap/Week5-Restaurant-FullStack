@@ -50,3 +50,13 @@ app.post("/order", function (req, res) {
 
   res.json(insertedItem);
 });
+
+app.delete("/order/:id", function (req, res) {
+  const itemId = req.params.id;
+
+  const deletedItem = db
+    .prepare(`DELETE FROM foodorder WHERE id = ?`)
+    .run(itemId);
+
+  res.json({ message: "Item deleted successfully", deletedItem });
+});
