@@ -2,7 +2,9 @@ const menuDiv = document.getElementById("menu-div");
 const basketDiv = document.getElementById("basket-div");
 
 async function getBasket() {
-  const response = await fetch("http://localhost:8080/order");
+  const response = await fetch(
+    "https://server-week5-project.onrender.com/order"
+  );
   const items = await response.json();
   console.log(items);
 
@@ -21,8 +23,7 @@ async function getBasket() {
     deleteBtn.classList.add("deleteBtn");
 
     deleteBtn.addEventListener("click", function () {
-      // Handle the delete button click
-      deleteBasketItem(item.id); // Assuming there is an 'id' property in your item
+      deleteBasketItem(item.id);
     });
 
     totalPrice += item.price;
@@ -42,7 +43,6 @@ async function getBasket() {
   const totalSpan = document.createElement("span");
   totalSpan.textContent = "Total Price: " + totalPrice;
 
-  // Append totalSpan to the bottom of basketDiv
   basketDiv.appendChild(totalSpan);
 
   console.log("Total Price:", totalPrice);
@@ -57,12 +57,10 @@ async function getBasket() {
 }
 
 async function deleteBasketItem(itemId) {
-  // Send a DELETE request to the server to delete the item
-  await fetch(`http://localhost:8080/order/${itemId}`, {
+  await fetch(`https://server-week5-project.onrender.com/order/${itemId}`, {
     method: "DELETE",
   });
 
-  // Clear the basketDiv and reload the basket
   basketDiv.innerHTML = "";
   await getBasket();
 }
@@ -72,7 +70,9 @@ if (basketDiv) {
 }
 
 async function getMenu() {
-  const response = await fetch("http://localhost:8080/menu");
+  const response = await fetch(
+    "https://server-week5-project.onrender.com/menu"
+  );
   const items = await response.json();
   console.log(items);
 
@@ -116,106 +116,6 @@ if (menuDiv) {
   getMenu();
 }
 
-// function orderBtnListener() {
-//   const btns = document.querySelectorAll(".orderBtn");
-//   btns.forEach((btn) => {
-//     btn.addEventListener("click", function () {
-//       const itemName = this.parentNode.querySelector(".itemName").textContent;
-//       const itemPrice = this.parentNode.querySelector(".itemPrice").textContent;
-
-//       fetch("http://localhost:8080/order", {
-//         method: "POST",
-//         headers: {
-//           "Content-type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           name: itemName,
-//           price: parseFloat(itemPrice),
-//         }),
-//       })
-//         .then((response) => response.json())
-//         .then((data) => console.log(data))
-//         .catch((error) => console.error("Error:", error));
-//     });
-//   });
-// }
-// const productPrices = {
-//   fishQuantity: 12.99,
-//   pieQuantity: 10.99,
-//   bangersQuantity: 9.99,
-//   platterQuantity: 8.99,
-//   puddingQuantity: 5.99,
-//   teaQuantity: 2.99,
-//   pimmsQuantity: 7.99,
-//   lemonadeQuantity: 3.99,
-// };
-
-// // Function to calculate the total
-// function calculateTotal() {
-//   let total = 0;
-//   const quantities = document.querySelectorAll(".quantity");
-
-//   quantities.forEach((quantity) => {
-//     const productId = parseInt(quantity.id.replace("quantity", ""));
-//     const price = productPrices[productId];
-//     const quantityValue = parseInt(quantity.value);
-//     total += price * quantityValue;
-//   });
-
-//   return total;
-// }
-
-// // Func to update num of items & total
-// function updateCart() {
-//   const total = calculateTotal();
-//   document.getElementById("total").textContent = total;
-// }
-
-// // Func to place order
-// function placeOrder() {
-//   const total = calculateTotal();
-//   alert(`Your total is £${total}. Order placed! Your driver is on the way!`);
-// }
-
-// // Event list 4 quant change
-// const quantities = document.querySelectorAll(".quantity");
-// quantities.forEach((quantity) => {
-//   quantity.addEventListener("change", updateCart);
-// });
-
-// // Initial updt of the basket
-// updateCart();
-
-// // Function to calculate the total
-// function calculateTotal() {
-//   let total = 0;
-//   const quantities = document.querySelectorAll(".quantity");
-
-//   quantities.forEach((quantity) => {
-//     const productId = parseInt(quantity.id.replace("quantity", ""));
-//     const price = productPrices[productId];
-//     const quantityValue = parseInt(quantity.value);
-//     total += price * quantityValue;
-//   });
-
-//   return total;
-// }
-
-// // Func to update num of items & total
-// function updateCart() {
-//   const total = calculateTotal();
-//   document.getElementById("total").textContent = total;
-// }
-
-// // Func to place order
-// function placeOrder() {
-//   const total = calculateTotal();
-//   alert(`Your total is £${total}. Order placed! Your driver is on the way!`);
-// }
-
-// // Initial updt of the basket
-// updateCart();
-
 function orderBtnListener() {
   const btns = document.querySelectorAll(".orderBtn");
   btns.forEach((btn) => {
@@ -225,7 +125,7 @@ function orderBtnListener() {
 
       const itemPrice = this.parentNode.querySelector(".itemPrice").textContent;
 
-      fetch("http://localhost:8080/order", {
+      fetch("https://server-week5-project.onrender.com/order", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
