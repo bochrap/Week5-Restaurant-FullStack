@@ -46,6 +46,14 @@ async function getBasket() {
   basketDiv.appendChild(totalSpan);
 
   console.log("Total Price:", totalPrice);
+
+  const placeOrderBtn = document.createElement("button");
+  placeOrderBtn.textContent = "Place Order";
+  placeOrderBtn.addEventListener("click", function () {
+    alert("YOUR ORDER IS ON IT'S WAY");
+  });
+
+  basketDiv.appendChild(placeOrderBtn);
 }
 
 async function deleteBasketItem(itemId) {
@@ -56,11 +64,11 @@ async function deleteBasketItem(itemId) {
 
   // Clear the basketDiv and reload the basket
   basketDiv.innerHTML = "";
-  getBasket();
+  await getBasket();
 }
 
 if (basketDiv) {
-  getBasket();
+  await getBasket();
 }
 
 async function getMenu() {
@@ -103,8 +111,6 @@ async function getMenu() {
   });
   orderBtnListener();
 }
-
-// getMenu();
 
 if (menuDiv) {
   getMenu();
@@ -215,12 +221,7 @@ function orderBtnListener() {
   btns.forEach((btn) => {
     btn.addEventListener("click", function () {
       const itemNameElement = this.parentNode.querySelector(".itemName");
-      const itemName = itemNameElement ? itemNameElement.textContent : ""; // Ensure itemName is not undefined
-
-      // if (!itemName.trim()) {
-      //   console.error("Item name is empty or undefined");
-      //   return;
-      // }
+      const itemName = itemNameElement ? itemNameElement.textContent : "";
 
       const itemPrice = this.parentNode.querySelector(".itemPrice").textContent;
 
