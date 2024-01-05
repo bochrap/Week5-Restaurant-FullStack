@@ -62,11 +62,11 @@ async function deleteBasketItem(itemId) {
   });
 
   basketDiv.innerHTML = "";
-  await getBasket();
+  getBasket();
 }
 
 if (basketDiv) {
-  await getBasket();
+  getBasket();
 }
 
 async function getMenu() {
